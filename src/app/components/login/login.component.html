@@ -1,20 +1,15 @@
 
 <div>
+  <br>
+  <br>
 
   <div class="col-md-4"></div>
-
-  <div class="col-md-4" style="padding: 50px;top: 10px;background: #fff;border-radius: 3px;">
+  <div class="col-md-4" style="padding: 50px;top: 10px;background-color: rgba(255,255,255,0.2);border-radius: 3px;">
     <!-- Logo and some text here -->
     <div style="text-align: center">
-      <h4 style="color: #5c5c5c;">Welcome To Project Shan</h4>
+      <h2 style="color: #f8fff1;font-weight: 900;">Welcome</h2>
     </div>
-
-
-    <div style="text-align: center">
-      <h6>
-        <p style="color: #5c5c5c;">Please Login for check your status and updates</p>
-      </h6>
-    </div>
+    <br>
 
     <form [formGroup]="loginForm" novalidate>
       <div class="form-group">
@@ -49,11 +44,11 @@
       <!-- Remember me-->
       <div style="text-align: center" class="form-group">
         <div style="display: inline"><input type="checkbox"></div>
-        <div style="display: inline; color: #5c5c5c;">&nbsp; Remember Me !</div>
+        <div style="display: inline; color: #ffffff;">&nbsp; Remember Me !</div>
       </div>
 
       <div class="form-group" style="text-align: center">
-        <button class="btn btn-success" type="button" (click)="login()" style="width: 100%">Login</button>
+        <button class="btn btn-suc" type="button" (click)="login()" style="width: 100%">Login</button>
       </div>
     </form>
 
@@ -61,30 +56,26 @@
     <legend></legend>
     <div class="form-group clearfix">
       <div class="col-md-6 text-center">
-        <a routerLink="/forgot-password" style="color: #5c5c5c;">Forgot password ?</a>
+        <a routerLink="/forgot-password" style="color: #ffffff;">Forgot password ?</a>
       </div>
       <div class="col-md-6 text-center">
-        <a routerLink="/sign-up" style="color: #5c5c5c;">Not an account ?</a>
+        <a routerLink="/sign-up" style="color: #ffffff;">Not an account ?</a>
       </div>
     </div>
 
     <legend></legend>
 
-    <div>
-      <div class="col-md-6 col-sm-12 form-group" style="padding: 0">
-        <button class="btn btn-danger " style="width: 100%"> Login with Google </button>
-      </div>
-      <div class="col-md-6 col-sm-12 form-group" style="padding: 0">
-        <button class="btn btn-primary" style="width: 100%"> Login with Facebook </button>
-      </div>
+    <!--<div>-->
+      <!--<div class="col-md-6 col-sm-12 form-group" style="padding: 0">-->
+        <!--<button class="btn btn-danger " style="width: 100%"> Login with Google </button>-->
+      <!--</div>-->
+      <!--<div class="col-md-6 col-sm-12 form-group" style="padding: 0">-->
+        <!--<button class="btn btn-primary" style="width: 100%"> Login with Facebook </button>-->
+      <!--</div>-->
 
-    </div>
+    <!--</div>-->
   </div>
-
   <div class="col-md-4">
-    <br>
-    <br>
-    <br>
 
   </div>
 
