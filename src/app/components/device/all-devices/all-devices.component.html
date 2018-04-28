@@ -1,0 +1,27 @@
+
+<!-- List of all devices -->
+<!-- create device -->
+<!-- update device -->
+
+<div>
+  <div>
+    <button class="btn btn-success" [routerLink]="'/device/add'">Add New Device</button>
+  </div>
+
+  <div>
+    <app-table
+      [dataList]="dataList"
+      [actions]="actions"
+      [headers]="tableHeaders"
+      [isEnableActions]="true"
+      [actionType]="'FUNCTION'" (action)="getSelectedAction($event)">
+    </app-table>
+
+    <app-pagination *ngIf="dataList.length > 0"
+                    [recordsPerPage]="recordsPerPage"
+                    [recordCount]="totalRecords"
+                    [currentPage]="currentPage"
+                    (pageNumber)="getPage($event)">
+    </app-pagination>
+  </div>
+</div>

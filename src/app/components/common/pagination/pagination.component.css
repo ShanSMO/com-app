@@ -1,0 +1,12 @@
+.page-item {
+  border-radius: 50px !important; }
+
+.active-page {
+  background: #1d2a33;
+  color: #fff !important; }
+
+.active-page:hover {
+  background: #1d2a33;
+  color: #fff !important; }
+
+/*# sourceMappingURL=pagination.component.css.map */

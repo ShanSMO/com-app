@@ -1,0 +1,26 @@
+<div class="content">
+
+
+  <div class="panel-group" id="permission-collapse">
+
+    <ng-container >
+
+      <div class="panel panel-default" *ngFor="let permission of permissionSet ; let i = index">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#permission-collapse" [href]="'#'+permission.id">{{permission.name}}</a>
+          </h4>
+        </div>
+        <div [id]="permission.id" class="panel-collapse collapse" >
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.</div>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </div>
+
+</div>

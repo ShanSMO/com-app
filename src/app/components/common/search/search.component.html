@@ -1,0 +1,35 @@
+<div class="clearfix form-group">
+
+  <!-- Search Filters -->
+  <div class="col-md-10">
+    <div class="col-md-3" *ngFor="let filter of filters">
+
+      <label>{{filter.name}}</label>
+      <ng-container *ngIf="filter.type == 'text'">
+        <input type="text" [placeholder]="filter.placeholder" class="form-control">
+      </ng-container>
+
+      <ng-container *ngIf="filter.type == 'select'">
+        <select class="form-control">
+          <option>Owner</option>
+          <option>User</option>
+          <option>Staff</option>
+        </select>
+      </ng-container>
+
+      <ng-container *ngIf="filter.type == 'date'">
+        <my-date-picker [options]="myDatePickerOptions"></my-date-picker>
+      </ng-container>
+
+
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <button class="btn btn-success">
+      <span><i class="fa fa-search"></i></span>
+      &nbsp;&nbsp; Search
+    </button>
+  </div>
+
+</div>

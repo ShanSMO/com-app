@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAgB;EACd,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,IAAI;EACX,cAAc,EAAE,IAAI;EACpB,MAAM,EAAE,kBAAkB",
+"sources": ["personal-details.component.scss"],
+"names": [],
+"file": "personal-details.component.css"
+}

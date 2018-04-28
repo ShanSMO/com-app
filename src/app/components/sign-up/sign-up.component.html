@@ -1,0 +1,78 @@
+
+<div style="margin-top: 30px;">
+
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4" style="padding: 0 40px 0 40px;">
+
+
+    <form [formGroup]="registrationForm" novalidate>
+
+      <div class="panel panel-default">
+        <div class="panel-heading" style="text-align: center">
+          <h4><strong>Sign Up</strong></h4>
+        </div>
+        <div class="panel-body">
+          <h5>Account Type</h5>
+          <div class="btn-group form-group" style="width: 100%" data-toggle="buttons">
+            <!--class="btn btn-primary active"-->
+            <!--<label   style="width: 25%;padding-top: 7px;border-radius: 3px 0 0 3px;">-->
+              <input type="radio" value="OWNER" formControlName="userType">Owner
+            <!--</label>-->
+            <!--<label class="btn btn-primary" style="width: 25%;padding-top: 7px;">-->
+              <input type="radio"  value="SUPPLIER" formControlName="userType">Supplier
+            <!--</label>-->
+            <!--<label class="btn btn-primary" style="width: 25%;padding-top: 7px;">-->
+              <input type="radio"  value="AGENT" formControlName="userType">Agent
+            <!--</label>-->
+            <!--<label class="btn btn-primary" style="width: 25%;padding-top: 7px;border-radius: 0 3px 3px 0">-->
+              <input type="radio"  value="STAFF" formControlName="userType">Staff
+            <!--</label>-->
+          </div>
+
+
+          <br>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="email address" formControlName="email">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="contact number" formControlName="contactNumber">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="password" placeholder="password" formControlName="password">
+          </div>
+          <div  class="clearfix">
+            <app-strength-indicator [type]="'PASSWORD'" [inputText]="registrationForm.get('password').value"></app-strength-indicator>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" type="password" placeholder="confirm password" formControlName="confirmPassword">
+            <h6 style="color: #d2d2d2; " *ngIf="(registrationForm.value.confirmPassword != null) && (registrationForm.value.password != registrationForm.value.confirmPassword)">Password Dosen`t Mactch</h6>
+          </div>
+
+          <div class="form-group" *ngIf="registrationForm.value.userType == 'STAFF'">
+            <input class="form-control" type="text" placeholder="Company Id">
+          </div>
+
+          <div class="form-group" style="text-align: center;">
+            <button class="btn btn-success" type="button" (click)="createAccount()" style="width: 100%;margin-top: 10px;">Register</button>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="form-group clearfix">
+            <div class="text-center">
+              <a routerLink="/forgot-password" style="color: #6b6b6b;">Forgot password ?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <div class="col-md-4"></div>
+
+
+</div>

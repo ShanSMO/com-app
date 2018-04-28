@@ -1,0 +1,48 @@
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <span>
+<!--<img alt="image" class="img-circle" src="img/profile_small.jpg" />-->
+          </span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="clear">
+              <span class="block m-t-xs">
+                <strong class="font-bold">David Williams</strong>
+            </span>
+              <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+            </span>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="mailbox.html">Mailbox</a></li>
+            <li class="divider"></li>
+            <li><a href="login.html">Logout</a></li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          IN+
+        </div>
+      </li>
+      <li *ngFor="let menuItems of items" class="panel">
+        <a [href]="'#'+menuItems.label" data-toggle="collapse" aria-expanded="false" class="accordion-toggle"
+           data-parent="#side-menu" *ngIf="menuItems.type == 'submenu' ">
+          <i [class]="menuItems.icon"></i><span>{{menuItems.label}}</span><i class="fa arrow"></i>
+        </a>
+        <ul class="nav nav-second-level collapse" [id]="menuItems.label" *ngIf="menuItems.type == 'submenu' " >
+          <li *ngFor="let submenuitem of menuItems.submenu" >
+            <a [routerLink]="submenuitem.route">{{submenuitem.label}}</a>
+          </li>
+        </ul>
+
+        <a [routerLink]="menuItems.route" *ngIf="menuItems.type == 'menu' ">
+          <i [class]="menuItems.icon"></i><span class="nav-label">{{menuItems.label}}</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,18 @@
+<div class="clearfix">
+  <input type="file" (change)="fileChangeEvent($event)" />
+  <div class="col-md-8">
+    <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="1 / 1"
+      [resizeToWidth]="256"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()"
+      (loadImageFailed)="loadImageFailed()" style="max-height: 400px;">
+    </image-cropper>
+  </div>
+  <div class="col-md-4">
+    <img [src]="croppedImage" />
+  </div>
+</div>

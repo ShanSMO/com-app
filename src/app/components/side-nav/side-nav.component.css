@@ -1,0 +1,14 @@
+li , .panel{
+   margin-bottom: 0px;
+   background-color: #2f4050;
+   border: none;
+   border-radius: 0px;
+   box-shadow: none;
+}
+
+a[aria-expanded="true"] > .fa.arrow {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transition: 0.5s;
+}

@@ -1,0 +1,5 @@
+<div style="    width: 30px;text-align: center;cursor: pointer;" (click)="openPopover()" appOutsideClick (clickOutside)="onClickOutside($event)">
+  <i class="fa fa-ellipsis-v" ></i>
+</div>
+
+<div *ngIf="view"></div>

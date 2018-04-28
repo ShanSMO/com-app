@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,SAAS;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,eAAe;EACvB,aAAa,EAAE,eAAe;EAC9B,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,4BAA4B;;AAGtC,eAAe;EACb,OAAO,EAAE,eAAe;;AAG1B,gBAAgB;EACd,OAAO,EAAE,cAAc",
+"sources": ["user-verification.component.scss"],
+"names": [],
+"file": "user-verification.component.css"
+}

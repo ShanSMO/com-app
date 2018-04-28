@@ -1,0 +1,20 @@
+<app-search></app-search>
+<div>
+  <app-table
+    [dataList]="dataList"
+    [headers]="tableHeaders"
+    [isEnableActions]="true"
+    [actions]="actions"
+    [filter]="" (pageNumber)="getPage($event)">
+  </app-table>
+
+  <app-pagination *ngIf="dataList.length > 0"
+    [recordsPerPage]="recordsPerPage"
+    [recordCount]="totalRecords"
+    [currentPage]="currentPage"
+    (pageNumber)="getPage($event)">
+  </app-pagination>
+</div>
+
+<!--<app-image-modal></app-image-modal>-->
+

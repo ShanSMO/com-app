@@ -1,0 +1,12 @@
+<div class="dropdown profile-element">
+  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    <i class="fa fa-bars"></i>
+  </a>
+  <ul class="dropdown-menu animated ">
+    <li *ngFor="let option of options">
+      <a [routerLink]="option.path" *ngIf="actionType === 'ROUTE'">{{option.label}}</a>
+      <a (click)="setFunction(object, option.label)" *ngIf="actionType === 'FUNCTION'">{{option.label}}</a>
+    </li>
+    <li class="divider"></li>
+  </ul>
+</div>

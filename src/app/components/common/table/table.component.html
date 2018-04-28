@@ -1,0 +1,36 @@
+<div class="table-div">
+
+  <div *ngIf="dataList.length > 0">
+    <div style="height: 350px;">
+      <table class="table table-striped" >
+        <thead>
+        <tr>
+          <ng-container *ngFor="let column of headers">
+            <th (click)="sort(column.name)" *ngIf="column.isVisible">{{column.name}}</th>
+          </ng-container>
+          <th *ngIf="isEnableActions">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody >
+        <tr *ngFor="let row of dataList " >
+          <ng-container *ngFor="let cell of row ; let i = index">
+            <td *ngIf="headers[i].isVisible">
+              <div>{{cell}}</div>
+            </td>
+          </ng-container>
+
+          <td *ngIf="isEnableActions" >
+            <app-drop-down
+              [options]="actions"
+              [object]="row"
+              [actionType]="actionType" (selectedAction)="selectedAction($event)">
+            </app-drop-down>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

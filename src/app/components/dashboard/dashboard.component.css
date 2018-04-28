@@ -1,0 +1,26 @@
+.tile{
+  background: #fefeff;
+  margin:5px;
+  padding: 5px;
+  color: #5e5e5f;
+}
+
+#dashboard{
+  margin-top: 10px;
+}
+
+.tiles{
+  min-height: 100px;
+  padding: 5px;
+}
+
+.tile-inside{
+  background: #444;
+  height: 100px;
+  padding: 5px;
+  color:#fff;
+}
+
+tspan , textPath  {
+  display: none !important;
+}
