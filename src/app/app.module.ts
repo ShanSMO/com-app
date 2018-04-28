@@ -31,6 +31,7 @@ import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import {DeviceModule} from "./components/device/device.module";
 import {ProfileViewModule} from "./components/profile-view/profile-view.module";
 import {TreeviewModule} from "ngx-treeview";
+import {TaskManagementModule} from "./components/task-management/task-management.module";
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -67,7 +68,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     FusionChartsModule,
     DeviceModule,
     ProfileViewModule,
-    TreeviewModule.forRoot()
+    TreeviewModule.forRoot(),
+    TaskManagementModule
   ],
   providers: [ToastrService],
   bootstrap: [AppComponent]

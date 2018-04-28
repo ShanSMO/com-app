@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'app-collection-schedules',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./collection-schedules.component.scss']
 })
 export class CollectionSchedulesComponent implements OnInit {
+
+
+  myDatePickerOptions: IMyDpOptions  = {
+    dateFormat: 'dd/mm/yyyy',
+  };
 
   constructor() { }
 

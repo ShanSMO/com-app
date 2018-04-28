@@ -1,3 +1,123 @@
-<p>
-  collection-schedules works!
-</p>
+<div class="animated fadeIn">
+
+
+  <div class="clearfix form-group">
+    <h2>Create Collection Schedule</h2>
+    <legend></legend>
+  </div>
+
+  <div class="clearfix form-group">
+    <div class="col-md-6" style="border-right: 1px solid #b7b7b7">
+      <div class="clearfix form-group">
+        <label>Vehicle ID *</label>
+        <select class="full-width">
+          <option>KD-5524 | VH00225</option>
+          <option>55 - 1255 | VH00235</option>
+          <option>DAB - 1250 | VH00025</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Driver *</label>
+        <select class="full-width">
+          <option>Mr. Karunasena | DR0001</option>
+          <option>Mr. Samarasinghe | DR0025</option>
+          <option>Mr. Amarasiri | DR0125</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Helper *</label>
+        <select class="full-width">
+          <option>Mr. Karunasena | HLP0001</option>
+          <option>Mr. Samarasinghe | HLP0025</option>
+          <option>Mr. Amarasiri | HLP0125</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Rute *</label>
+        <select class="full-width">
+          <option>Deniyaya to Akuressa | RT0001</option>
+          <option>Deniyaya to Matara | RT0025</option>
+          <option>Baduraliya to Deiganna | RT0125</option>
+        </select>
+      </div>
+
+      <div class="clearfix form-group">
+        <div class="col-md-6 no-padding" style="padding-right: 3px !important;">
+          <label>Start Time</label>
+          <my-date-picker [options]="myDatePickerOptions"></my-date-picker>
+        </div>
+        <div class="col-md-6 no-padding" style="padding-left: 3px !important;">
+          <label>End Time</label>
+          <my-date-picker [options]="myDatePickerOptions"></my-date-picker>
+        </div>
+      </div>
+
+      <div class="clearfix form-group">
+        <label>Repeat On *</label>
+        <div>
+          <div class="col-md-6">
+            <div>
+              <div class="col-md-6">Sunday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+            <div><div class="col-md-6">Monday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+            <div><div class="col-md-6">Tuesday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+            <div><div class="col-md-6">Wednesday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div><div class="col-md-6">Thursday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+            <div><div class="col-md-6">Friday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+            <div><div class="col-md-6">Saturday</div>
+              <div class="col-md-6"><input type="checkbox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- Vehicle Image -->
+      <!-- Driver Image -->
+      <!-- Helper Image -->
+      <!-- Route  View Image -->
+
+      <div class="clearfix form-group">
+        <div class="col-md-4">
+          <label>Vehicle</label>
+          <div style="content: url('../../../../assets/images/a4.jpg')"></div>
+        </div>
+        <div class="col-md-4">
+          <label>Driver</label>
+          <div style="content: url('../../../../assets/images/a2.jpg')"></div>
+        </div>
+        <div class="col-md-4">
+          <label>Helper</label>
+          <div style="content: url('../../../../assets/images/a3.jpg')"></div>
+        </div>
+      </div>
+
+      <div>
+        <label>Route</label>
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-suc">Save</button>
+  </div>
+
+</div>

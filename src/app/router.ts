@@ -26,6 +26,7 @@ import {VehicleLayoutComponent} from './components/vehicle/vehicle-layout/vehicl
 import {DeviceAddComponent} from './components/device/device-add/device-add.component';
 import {AllDevicesComponent} from "./components/device/all-devices/all-devices.component";
 import {ProfileViewComponent} from "./components/profile-view/profile-view/profile-view.component";
+import {CollectionSchedulesComponent} from "./components/task-management/collection-schedules/collection-schedules.component";
 
 export const routers: Routes = [
 
@@ -83,6 +84,9 @@ export const routers: Routes = [
   ]},
   { path: '' , component: CommonLayoutComponent, children: [
     {path: 'profile', component: ProfileViewComponent}
+  ]},
+  { path: '' , component: CommonLayoutComponent, children: [
+    {path: 'create-schedule', component: CollectionSchedulesComponent}
   ]},
   { path: '**', component: LoginComponent }
 

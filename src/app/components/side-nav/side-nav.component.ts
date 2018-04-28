@@ -15,11 +15,6 @@ export class SideNavComponent implements OnInit {
     this.items = [
       {
         type: 'menu',
-        label: 'Dashboard',
-        route: '/home/home',
-        icon: 'fa fa-th-large'
-      }, {
-        type: 'menu',
         label: 'Profile',
         route: '/profile',
         icon: 'fa fa-th-large'
@@ -63,12 +58,6 @@ export class SideNavComponent implements OnInit {
         ]
       },
       {
-        type: 'menu',
-        label: 'Login',
-        route: '/login',
-        icon: 'fa fa-th-large'
-      },
-      {
         type: 'submenu',
         label: 'Tasks_Management',
         route: '#',
@@ -76,34 +65,8 @@ export class SideNavComponent implements OnInit {
         submenu: [
           {
             type: 'submenu',
-            label: 'Summary',
-            route: '/home/dashboard',
-            icon: 'fa fa-home'
-          },
-          {
-            type: 'menu',
-            label: 'Pie Chart',
-            route: '/home/table',
-            icon: 'fa fa-home'
-          },
-          {
-            type: 'menu',
-            label: 'Line Chart',
-            route: '/home/table',
-            icon: 'fa fa-home'
-          }
-        ]
-      },
-      {
-        type: 'submenu',
-        label: 'Home',
-        route: '/home/home',
-        icon: 'fa fa-home',
-        submenu: [
-          {
-            type: 'menu',
-            label: 'Bar Chart',
-            route: '/home/master',
+            label: 'Collection_Schedules',
+            route: '/create-schedule',
             icon: 'fa fa-home'
           }
         ]
@@ -117,12 +80,6 @@ export class SideNavComponent implements OnInit {
           {
             type: 'menu',
             label: 'User Permissions',
-            route: '/home/permissions',
-            icon: 'fa fa-envelope',
-          },
-          {
-            type: 'menu',
-            label: 'User Registration',
             route: '/home/permissions',
             icon: 'fa fa-envelope',
           },
