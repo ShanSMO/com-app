@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {Router} from '@angular/router';
-import {LocalStorage} from "../../Utils/local-storage";
+import {ActivatedRoute, Router} from '@angular/router';
+import {LocalStorage} from '../../Utils/local-storage';
 declare let jQuery: any;
 declare let $: any;
 
@@ -10,12 +10,16 @@ declare let $: any;
   templateUrl: './common-layout.component.html',
   styleUrls: ['./common-layout.component.css']
 })
-export class CommonLayoutComponent implements OnInit {
+export class CommonLayoutComponent implements OnInit, OnChanges {
+
 
   languages: object[] = [];
   loggedInUser: string;
+  viewTitle: string;
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(private translate: TranslateService,
+              private router: Router,
+              private activatedRute: ActivatedRoute) {
     translate.addLangs(['en', 'ar', 'si' , 'ta']);
     translate.setDefaultLang('en');
     const browserLang = translate.getBrowserLang();
@@ -33,10 +37,15 @@ export class CommonLayoutComponent implements OnInit {
     $('#sidebarCollapse').on('click', function () {
       $('#sidebar').toggleClass(['active']);
     });
+
+    this.activatedRute.url.subscribe(() => {
+      console.log(this.activatedRute.snapshot.firstChild.data);
+    });
   }
 
   ngOnInit() {
     this.loggedInUser = localStorage.getItem(LocalStorage.LS_USER_NAME);
+    this.viewTitle = '';
   }
 
   toggleNav(): void {
@@ -68,5 +77,9 @@ export class CommonLayoutComponent implements OnInit {
       // Remove all inline style from jquery fadeIn function to reset menu state
       $('#side-menu').removeAttr('style');
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Changes');
   }
 }

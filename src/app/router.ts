@@ -91,7 +91,7 @@ export const routers: Routes = [
     {path: 'create-schedule', component: CollectionSchedulesComponent}
   ]},
   { path: '' , component: CommonLayoutComponent, children: [
-    {path: 'customer-overview', component: CustomerOverviewComponent},
+    {path: 'customer-overview', component: CustomerOverviewComponent , data: {title: 'Customer Overview'} },
     {path: 'create-customer', component: CustomerCreateComponent}
   ]},
   { path: '**', component: LoginComponent }
