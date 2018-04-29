@@ -7,6 +7,9 @@ import { CustomerCreateComponent } from './customer-create/customer-create.compo
   imports: [
     CommonModule
   ],
-  declarations: [CustomerOverviewComponent, CustomerCreateComponent]
+  declarations: [
+    CustomerOverviewComponent,
+    CustomerCreateComponent
+  ]
 })
 export class CustomersModule { }

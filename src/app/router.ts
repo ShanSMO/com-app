@@ -24,9 +24,11 @@ import {UpdateVehicleComponent} from './components/vehicle/update-vehicle/update
 import {VehicleListComponent} from './components/vehicle/vehicle-list/vehicle-list.component';
 import {VehicleLayoutComponent} from './components/vehicle/vehicle-layout/vehicle-layout.component';
 import {DeviceAddComponent} from './components/device/device-add/device-add.component';
-import {AllDevicesComponent} from "./components/device/all-devices/all-devices.component";
-import {ProfileViewComponent} from "./components/profile-view/profile-view/profile-view.component";
-import {CollectionSchedulesComponent} from "./components/task-management/collection-schedules/collection-schedules.component";
+import {AllDevicesComponent} from './components/device/all-devices/all-devices.component';
+import {ProfileViewComponent} from './components/profile-view/profile-view/profile-view.component';
+import {CollectionSchedulesComponent} from './components/task-management/collection-schedules/collection-schedules.component';
+import {CustomerOverviewComponent} from './components/customers/customer-overview/customer-overview.component';
+import {CustomerCreateComponent} from './components/customers/customer-create/customer-create.component';
 
 export const routers: Routes = [
 
@@ -87,6 +89,10 @@ export const routers: Routes = [
   ]},
   { path: '' , component: CommonLayoutComponent, children: [
     {path: 'create-schedule', component: CollectionSchedulesComponent}
+  ]},
+  { path: '' , component: CommonLayoutComponent, children: [
+    {path: 'customer-overview', component: CustomerOverviewComponent},
+    {path: 'create-customer', component: CustomerCreateComponent}
   ]},
   { path: '**', component: LoginComponent }
 

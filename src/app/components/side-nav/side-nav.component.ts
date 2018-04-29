@@ -21,7 +21,7 @@ export class SideNavComponent implements OnInit {
       },
       {
         type: 'submenu',
-        label: 'Organization_Activities',
+        label: 'Setting',
         route: '#',
         icon: 'fa fa-home',
         submenu: [
@@ -67,6 +67,25 @@ export class SideNavComponent implements OnInit {
             type: 'submenu',
             label: 'Collection_Schedules',
             route: '/create-schedule',
+            icon: 'fa fa-home'
+          }
+        ]
+      },
+      {
+        type: 'submenu',
+        label: 'Customers',
+        route: '#',
+        icon: 'fa fa-bar-chart',
+        submenu: [
+          {
+            type: 'submenu',
+            label: 'Customer Overview',
+            route: '/customer-overview',
+            icon: 'fa fa-home'
+          }, {
+            type: 'submenu',
+            label: 'Customer Add',
+            route: '/create-customer',
             icon: 'fa fa-home'
           }
         ]
@@ -174,18 +193,6 @@ export class SideNavComponent implements OnInit {
             icon: 'fa fa-map'
           }
         ]
-      },
-      // {
-      //   type: 'menu',
-      //   label: 'Camera',
-      //   route: '/home/camera',
-      //   icon: 'fa fa-camera'
-      // }
-      {
-        type: 'menu',
-        label: 'Device Management',
-        route: '/device/add',
-        icon: 'fa fa-mobile'
       }
     ];
   }
