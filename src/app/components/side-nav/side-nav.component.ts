@@ -66,7 +66,7 @@ export class SideNavComponent implements OnInit {
           {
             type: 'submenu',
             label: 'Collection_Schedules',
-            route: '/create-schedule',
+            route: '/schedule-overview',
             icon: 'fa fa-home'
           }
         ]

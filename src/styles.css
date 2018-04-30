@@ -3769,9 +3769,10 @@ body.tour-open .animated {
   border-bottom: 1px solid #e7eaec; }
 
 body {
-  background: url("./assets/images/blur-background.jpg");
+  background: url("./assets/images/green-blur.jpeg");
   color: #676a6c;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-size: cover; }
 
 html,
 body {

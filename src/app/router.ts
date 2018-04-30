@@ -29,6 +29,7 @@ import {ProfileViewComponent} from './components/profile-view/profile-view/profi
 import {CollectionSchedulesComponent} from './components/task-management/collection-schedules/collection-schedules.component';
 import {CustomerOverviewComponent} from './components/customers/customer-overview/customer-overview.component';
 import {CustomerCreateComponent} from './components/customers/customer-create/customer-create.component';
+import {CollectionScheduleOverviewComponent} from './components/task-management/collection-schedule-overview/collection-schedule-overview.component';
 
 export const routers: Routes = [
 
@@ -88,7 +89,8 @@ export const routers: Routes = [
     {path: 'profile', component: ProfileViewComponent}
   ]},
   { path: '' , component: CommonLayoutComponent, children: [
-    {path: 'create-schedule', component: CollectionSchedulesComponent}
+    {path: 'create-schedule', component: CollectionSchedulesComponent},
+    {path: 'schedule-overview', component: CollectionScheduleOverviewComponent}
   ]},
   { path: '' , component: CommonLayoutComponent, children: [
     {path: 'customer-overview', component: CustomerOverviewComponent , data: {title: 'Customer Overview'} },

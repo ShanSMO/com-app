@@ -1,10 +1,51 @@
-<ul class="nav nav-tabs">
-  <li><a data-toggle="tab" href="#" routerLink="vehicle/list-all-vehicles">Home</a></li>
-  <li><a data-toggle="tab" href="#" routerLink="vehicle/add-new-vehicle">Menu 1</a></li>
-  <li><a data-toggle="tab" href="#" routerLink="vehicle/add-new-vehicle">Menu 2</a></li>
-</ul>
-<div class="tab-content">
-  <div id="home" class="tab-pane fade in active">
-    <router-outlet></router-outlet>
+<div class="animated fadeIn">
+
+  <div class="clearfix form-group">
+  <div class="col-md-6">
+
+    <div class="clearfix form-group">
+      <label>Vehicle Type</label>
+      <select class="full-width">
+        <option>Lorry</option>
+        <option>Cab</option>
+      </select>
+    </div>
+
+    <div class="clearfix form-group">
+      <label>Registration number</label>
+      <input class="form-control">
+    </div>
+
+    <div class="clearfix form-group">
+      <label>Vehicle Image</label><br>
+      <div>
+        <div class="col-md-4 col-sm-4">
+          <div style="width: 150px;height: 150px;border: 1px solid #e0e0e0;padding: 10px;" class="form-group">
+            <img src="../../../../assets/images/u-prof.png" class="full-width">
+          </div>
+        </div>
+        <div style="border-top: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;padding: 15px;margin-top: 20px;" class="clearfix col-md-8 col-sm-8" >
+          <div class="col-md-6 text-center" style="border-right: 1px solid #e0e0e0; cursor: pointer">
+            <h3>Browse</h3>
+            <p class="p-text">Upload image from your computer</p>
+          </div>
+          <div class="col-md-6 text-center" style="cursor: pointer;">
+            <h3>Camera</h3>
+            <p class="p-text">Take a picture through the web can</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <div class="col-md-6">
+
+  </div>
+  </div>
+
+  <div>
+    <button class="btn btn-suc">Save Vehicle</button>
+  </div>
+
 </div>
