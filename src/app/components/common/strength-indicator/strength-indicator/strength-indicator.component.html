@@ -1,10 +1,32 @@
-<div class="progress">
-  <div class="progress-bar progress-bar-success"
-       role="progressbar"
-       [attr.aria-valuenow]="progressSize"
-       aria-valuemin="0"
-       aria-valuemax="100"
-       [style.width]="progressSize + '%'"
-       [style.background]="progressColor">
+<div>
+  <div class="progress" style="height: 5px;">
+    <div class="progress-bar progress-bar-success"
+         role="progressbar"
+         [attr.aria-valuenow]="progressSize"
+         aria-valuemin="0"
+         aria-valuemax="100"
+         [style.width]="progressSize + '%'"
+         [style.background]="progressColor">
+    </div>
   </div>
+
+  <div *ngIf="progressSize < 100">
+    <div class="alert alert-warning">
+      <p> Strong password </p>
+      <ul>
+        <li *ngIf="!hasGoodLength">should contain more than 8 characters</li>
+        <li *ngIf="!hasUpperCase">should contain a Upper  Case letter</li>
+        <li *ngIf="!hasLowerCase">should contain a Lower  Case letter</li>
+        <li *ngIf="!hasNumber">should contain a Number</li>
+        <li *ngIf="!hasSpecialChar">should contain a Special Character</li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="progressSize >= 100">
+    <div class="alert alert-success">
+      <i class="fa fa-check"></i> &nbsp;&nbsp;<strong>Strong Password</strong>
+    </div>
+  </div>
+
 </div>
