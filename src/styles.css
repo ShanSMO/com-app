@@ -8781,4 +8781,32 @@ label {
 .no-padding {
   padding: 0px; }
 
+.text-white {
+  color: #fff; }
+
+.bg-dark {
+  background: #ffffff; }
+
+.bg-dark-back {
+  background: #afacae; }
+
+.table-h {
+  background: #4285f4;
+  color: #fff;
+  padding: 3px !important;
+  text-align: center; }
+
+.table-b {
+  background: #f7efea;
+  color: #5c5c5c;
+  padding: 3px !important;
+  text-align: center;
+  border-bottom: 1px solid #d3d3d3; }
+
+.b-r {
+  border-right: 1px solid #d3d3d3; }
+
+.b-l {
+  border-left: 1px solid #d3d3d3; }
+
 /*# sourceMappingURL=styles.css.map */

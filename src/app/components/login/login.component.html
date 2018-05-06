@@ -32,12 +32,9 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" *ngIf="userRoles.length > 0">
         <select class="form-control" formControlName="userType">
-          <option value="OWNER">Business Owner</option>
-          <option value="SUPPLIER">Supplier</option>
-          <option value="AGENT">Agent</option>
-          <option value="STAFF">Staff</option>
+          <option [value]="role.id" *ngFor="let role of userRoles">{{role.roleLabel}}</option>
         </select>
       </div>
 

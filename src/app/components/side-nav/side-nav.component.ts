@@ -18,6 +18,11 @@ export class SideNavComponent implements OnInit {
         label: 'Profile',
         route: '/profile',
         icon: 'fa fa-th-large'
+      }, {
+        type: 'menu',
+        label: 'Dashboard',
+        route: '/home/dashboard',
+        icon: 'fa fa-th-large'
       },
       {
         type: 'submenu',

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
-import { FormControl , FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {ResponseObject} from '../../domains/response-object';
+import {Regex} from '../../Utils/regex';
 
 
 @Component({
@@ -16,12 +17,14 @@ export class SignUpComponent implements OnInit {
 
   response: ResponseObject ;
   registrationForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
-    userType: new FormControl('OWNER'),
-    contactNumber: new FormControl(),
+    email: new FormControl(null, [Validators.pattern(Regex.REGEX_EMAIL), Validators.required]),
+    password: new FormControl(null, [Validators.required]),
+    userType: new FormControl(1),
+    contactNumber: new FormControl(null , [Validators.pattern(Regex.REGEX_DIGITS), Validators.required]),
     confirmPassword: new FormControl()
   });
+
+  userRoles: any[] = [];
 
   constructor(
     private userService: UserService ,
@@ -30,15 +33,20 @@ export class SignUpComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.loadAllUserRoles();
   }
 
   createAccount() {
 
+    console.log(this.registrationForm.value);
+
     const userData = {
       userName: this.registrationForm.value.email,
       password: this.registrationForm.value.password,
-      userType: this.registrationForm.value.userType,
-      phoneNumber: this.registrationForm.value.contactNumber
+      phoneNumber: this.registrationForm.value.contactNumber,
+      role: {
+        id: this.registrationForm.value.userType,
+      }
     };
 
     this.userService.createUser(userData).subscribe(responseData => {
@@ -50,13 +58,12 @@ export class SignUpComponent implements OnInit {
         this.toast.error(this.response.message , 'Failed');
       }
     });
-
-
-    // verify email
   }
 
-  matchPassword(){
-
+  loadAllUserRoles () {
+    this.userService.loadAllUserRoles().subscribe(response => {
+        this.userRoles = response.objects;
+    });
   }
 
 }

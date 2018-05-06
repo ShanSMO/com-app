@@ -15,6 +15,7 @@ import {LocalStorage} from '../../Utils/local-storage';
 export class LoginComponent implements OnInit {
 
   response: ResponseObject;
+  userRoles: any[] = [];
 
   loginForm = new FormGroup({
     userName: new FormControl(),
@@ -28,13 +29,16 @@ export class LoginComponent implements OnInit {
               ) { }
 
   ngOnInit() {
+    this.loadAllUserRoles();
   }
 
   login() {
     const loginData = {
       userName: this.loginForm.value.userName,
       password: this.loginForm.value.password,
-      userType: this.loginForm.value.userType
+      role: {
+        id: this.loginForm.value.userType
+      }
     };
     this.userService.login(loginData).subscribe((data) => {
       this.response = JSON.parse(JSON.stringify(data));
@@ -45,9 +49,16 @@ export class LoginComponent implements OnInit {
           this.toast.info(this.response.message, 'Login Failed !');
       }
     });
+
   }
 
   checkOtherAccounts() {
 
+  }
+
+  loadAllUserRoles () {
+    this.userService.loadAllUserRoles().subscribe(response => {
+      this.userRoles = response.objects;
+    });
   }
 }

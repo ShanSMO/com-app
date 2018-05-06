@@ -68,6 +68,13 @@ export class UserService {
       });
   }
 
+  loadAllUserRoles(): Observable<any> {
+    return this.http.post(environment.serverUrl + urlEndPoints.LOAD_ALL_ROLES, {})
+      .map(data => {
+        return data;
+      })
+  }
+
 
 
 }

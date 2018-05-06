@@ -51,7 +51,7 @@ export const routers: Routes = [
       {path: 'permissions', component: UserPermissionsComponent},
       {path: 'add-user', component: AddUserComponent},
       {path: 'camera', component: ImageCaptureComponent},
-      // {path: 'location', component: LocationComponent},
+      {path: 'location', component: LocationComponent},
       {path: 'all-users', component: AllUsersComponent}
     ]
   },
