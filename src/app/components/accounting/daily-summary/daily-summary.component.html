@@ -1,3 +1,99 @@
-<p>
-  daily-summary works!
-</p>
+<div class="animated fadeIn" >
+
+  <div class="col-md-4" style="height: 420px;background: #ffffff;padding: 20px;">
+    <div style="background: #ffffff" class="clearfix form-group">
+      <div>
+        <form [formGroup]="itemForm">
+          <div class="clearfix form-group" style="border-bottom: 1px solid #83cbe6;">
+              <div class="col-md-6" style="padding: 0 5px 5px 0px;"><h3>Opening Balance</h3></div>
+              <div class="col-md-6 text-right" style="padding: 0 0 5px 0;"><h3>Rs. 12,500.50</h3></div>
+          </div>
+
+
+          <div class="form-group clearfix">
+              <label>Item  Code</label>
+              <input type="text" class="form-control" formControlName="id">
+          </div>
+
+          <div class="form-group clearfix">
+              <label>Unit price( Rs.)</label>
+              <input type="text" class="form-control" formControlName="price">
+          </div>
+
+          <div class="form-group clearfix">
+              <label>Quantity</label>
+              <input type="text" class="form-control" formControlName="qty">
+          </div>
+
+          <div class="form-group clearfix">
+              <label>Total (Rs.)</label>
+              <input type="text" class="form-control"
+                     formControlName="total"
+                     [ngModel]="(itemForm.get('price').value * itemForm.get('qty').value)"
+                     readonly>
+          </div>
+
+          <div class="form-group clearfix" style="text-align: right;">
+            <button class="btn btn-suc" (click)="addItem()" [disabled]="itemForm.invalid">
+              <i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp; Add to cart
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8" style="height: 420px;background: #ffffff;border-left: 3px solid #CDCDCD;padding: 20px;">
+    <div class="clearfix form-group" style="padding: 0px 0 5px 0;border-bottom: 1px solid #83cbe6;">
+        <div class="col-md-6 no-padding"><h3>Cart Details</h3></div>
+        <div class="col-md-6 no-padding text-right"><h3>Total Items : {{totalItems}}</h3></div>
+    </div>
+
+    <div class="clearfix form-group">
+      <form [formGroup]="itemGroupForm" *ngIf="itemGroupForm.get('itemArray').value.length > 0">
+
+        <div formArrayName="itemArray">
+          <div class="table-h clearfix">
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding text-left">Item Code</div>
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding text-right">Unit Price (Rs.)</div>
+            <div class="col-md-2 col-sm-2 col-xs-2 no-padding">Qty</div>
+            <div class="col-md-2 col-sm-2 col-xs-2 no-padding text-right">Total (Rs.)</div>
+            <div class="col-md-2 col-sm-2 col-xs-2 no-padding"></div>
+          </div>
+          <div style="max-height: 240px;min-height: 240px;overflow-y: auto;">
+            <div class="table-b clearfix" *ngFor="let item of itemGroupForm.get('itemArray').controls; let i = index;"
+                 [formGroupName]="i">
+              <div class="col-md-3 col-sm-3 col-xs-3 no-padding text-left">{{item.get('id').value}}</div>
+              <div class="col-md-3 col-sm-3 col-xs-3 no-padding text-right">{{item.get('price').value | number:'0.2'}}</div>
+              <div class="col-md-2 col-sm-2 col-xs-2 no-padding">{{item.get('qty').value}}</div>
+              <div class="col-md-2 col-sm-2 col-xs-2 no-padding text-right">{{item.get('total').value | number:'0.2' }}</div>
+              <div class="col-md-2 col-sm-2 col-xs-2 no-padding">
+              <span>
+                <i class="fa fa-close" (click)="removeItem(item)"></i>
+                &nbsp;&nbsp;&nbsp;<i class="fa fa-edit"></i>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="text-center" *ngIf="itemGroupForm.get('itemArray').value.length <= 0" style="background: #f9f9f9;padding: 150px;">
+        <h2>Cart is currently Empty</h2>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid #83cbe6;padding: 10px;border-bottom: 1px solid #83cbe6" class="clearfix form-group" *ngIf="itemGroupForm.get('itemArray').value.length > 0">
+      <div class="col-md-6" style="text-align: right;font-size: 20px;font-weight: 500;color: #18678e;">Total Price</div>
+      <div class="col-md-6" style="text-align: right;font-size: 20px;font-weight: 500;color: #18678e;">Rs.&nbsp;&nbsp; {{totalPrice | number: '0.2'}}</div>
+    </div>
+  </div>
+
+  <div class="clearfix" style="padding: 3px;"></div>
+
+  <div class="clearfix form-group text-right" style="background: #fff;padding: 5px;">
+    <button class="btn btn-suc"><i class="fa fa-print"></i> &nbsp;&nbsp; Print</button>
+    <button class="btn btn-suc"><i class="fa fa-money" aria-hidden="true"></i> &nbsp;&nbsp; Pay</button>
+  </div>
+
+</div>
